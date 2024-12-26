@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # PostgreSQL database
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DB_USER}  # Referencing the .env variable
+      POSTGRES_PASSWORD: ${DB_PASSWORD}  # Referencing the .env variable
+      POSTGRES_DB: ${DB_DATABASE}  # Referencing the .env variable
+    ports:
+      - "${DB_PORT}:5432"  # Use DB_PORT from .env to expose the correct port
+    networks:
+      - app-network
+
+  # Backend (Node.js) - productback
+  productback:
+    build:
+      context: ./productback  # Path to your Node.js backend
+    environment:
+      DB_HOST: ${DB_HOST}  # Referencing DB_HOST from .env
+      DB_USER: ${DB_USER}  # Referencing DB_USER from .env
+      DB_PASSWORD: ${DB_PASSWORD}  # Referencing DB_PASSWORD from .env
+      DB_NAME: ${DB_DATABASE}  # Referencing DB_DATABASE from .env
+      DB_PORT: ${DB_PORT}  # Referencing DB_PORT from .env
+    depends_on:
+      - postgres  # Ensure PostgreSQL is started before backend
+    ports:
+      - "4000:4000"
+    command: ["npm", "run", "dev"]  # Run backend with npm run dev
+    networks:
+      - app-network
+
+  # Frontend (React) - productfront
+  productfront:
+    build:
+      context: ./productfront  # Path to your React frontend
+    ports:
+      - "5173:5173"  # Expose frontend to port 5173
+    command: ["npm", "run", "dev"]  # Run frontend with npm run dev
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+dist/
+build/
+
+# Frontend build
+frontend/build/
+
+# Database files
+*.db
+*.sqlite
+
+# Logs
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+*.swp
+
+# Vercel/Netlify files
+.vercel/
+.netlify/
+
+# npm and yarn lock files
+package-lock.json
+yarn.lock

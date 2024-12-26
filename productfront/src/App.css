@@ -1,0 +1,86 @@
+/* src/App.css */
+h1, h2 {
+  text-align: center;
+}
+
+form {
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: aquamarine;
+    border-radius: 10px ;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+ 
+}
+
+button:hover {
+  background: #fff;
+    border-radius: 10px;
+    border: 2px solid black;
+    color:#000;
+  
+}
+
+button:last-child {
+  background-color: #f44336;
+}
+
+button:last-child:hover {
+  background-color: #c72b22;
+}

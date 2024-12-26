@@ -1,0 +1,473 @@
+body{
+    
+}
+.home-container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(45deg, #9ceaef, #def780);;
+    border-bottom: 17px solid #fff4f4;
+    border-radius: 0px 0px 55% 55%;
+    padding: 20px;
+    /* background-image: url('/assets/image/topimgsdemo.jpg');
+    background-position:center; */
+}
+    
+    
+    
+  .headerInner{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+  }
+  
+  .search-bar {
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ffffff;
+    border-radius: 13px;
+    padding: 15px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .product-card {
+    
+    padding: 8px;
+    width: 45%;
+    height: auto;
+    text-align: center;
+    border-radius: 26px;
+  }
+  
+  .product-image {
+    width: 100%;
+    border-radius:10px;
+    object-fit: cover;
+  }
+  .product-card p{
+    border-bottom: 1px solid #cac1c1;
+    padding: 10px 0px;
+  }
+  .product-images {
+    position: relative;
+    width: 100%;
+ 
+    overflow: hidden; /* Ensures the image doesn't overflow its container */
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image scales without overflowing */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+  }
+  
+  .product-image.bounce-animation {
+    animation: bounce 1s infinite;
+  }
+  
+  /* Optional zoom on hover effect */
+  .product-image:hover {
+    transform: scale(1.1); /* Adjust the scale to zoom in */
+  }
+  
+  /* Sticky sidebar image styling */
+  .stickySidebar img {
+    width: 100%;
+    height: auto; /* Keeps the aspect ratio */
+    object-fit: contain; /* Ensures the image stays within the box */
+  }
+  
+  @keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .cart-table th, .cart-table td {
+    padding: 30px 3px;
+    text-align: left;
+    text-align: center;
+  }
+  
+  .cart-table th {
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .error-message {
+    color: red;
+  }
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transform: scale(0.9);
+    animation: slideIn 0.5s ease-out forwards;
+  }
+  
+  .modal-content h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .modal-content p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .close-modal-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .close-modal-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+    /* Style for the container of stacked images */
+/* Add keyframe for the bounce animation */
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-3px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  
+  /* Style for the image stack */
+  .image-stack {
+    position: relative;
+    width: 60px; /* Width of the stack */
+    height: 60px; /* Height of the stack */
+  }
+  
+  /* Style for each stacked image */
+  .stacked-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    z-index: initial;
+    transition: all 0.3s ease;
+  }
+  
+  .stacked-image.bounce {
+    animation: bounce 0.5s ease;
+  }
+  
+  /* Stack images with overlap effect */
+  .stacked-image:nth-child(n+2) {
+    margin-top: -10px;
+    transform: rotate(8deg);
+  }
+  
+  .stacked-image:nth-child(n+3) {
+    margin-top: -15px;
+    transform: rotate(15deg);
+  }
+  
+  .stacked-image:nth-child(n+4) {
+    margin-top: -20px;
+    transform: rotate(20deg);
+  }
+  
+  .stacked-image:first-child {
+    margin-top: 0;
+    transform: rotate(0deg);
+  }
+  
+  /* Ensure we only show a maximum of 3 stacked images */
+  .stacked-image:nth-child(n+4) {
+    display: none;
+  }
+  
+  .extra-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3px 8px;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  
+  /* Modal styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .modal-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .close-modal-button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  @keyframes bounceUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .bounce-animation {
+    animation: bounceUpDown 0.6s ease-in-out;
+  }
+  
+  .product-image {
+   
+    transition: transform 0.3s ease;
+    padding-top: 19px;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  /* Modal overlay to cover the entire screen */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    z-index: 1000;
+  }
+  
+  /* Modal content, centered */
+  .modal-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; /* White background for the image modal */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Zoomed image inside the modal */
+  .zoomed-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Cross mark close button style */
+  .close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1010; /* To make sure it's above the image */
+  }
+  
+  /* Hover effect on the cross button */
+  .close-modal-button:hover {
+    color: red; /* Change color on hover */
+  }
+  
+  .close-modal-button:focus {
+    outline: none; /* Remove focus outline */
+  }
+  
+  /* Prevent background interaction when modal is open */
+  .modal-active .product-image {
+    pointer-events: none; /* Disable pointer events on background images */
+  }
+  button {
+    /* background: #07beb8; */
+    background :linear-gradient(45deg,rgb(105, 218, 214), #d7f39c);
+    color: white;
+    border-radius: 25px !important;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+    outline: none;
+  }
+  
+  button:hover {
+    background: white;
+    color: #818181;
+    border: 1px solid #07beb8;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(1px); /* Button press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  .incredecre{
+    border-radius: 35px;
+    background: #68d8d6;
+    border: 1px solid transparent;
+    padding: 8px 13px;
+    text-align: center;
+  }
+  .incredecre:hover{
+   
+    background: #ffffff;
+    border: 1px solid #68d8d6;
+
+    color: #555756;
+  }
+  .quantdata{
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+}
+.orderSummaryBtn{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.top-cont{
+    padding: 60px 0px;
+    background: linear-gradient(45deg, #c7f687, #cff5ff);
+}
+.stickySidebar {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Adjust this value to make the sidebar stick at a certain point from the top */
+  z-index: 1000; /* Optional, to ensure it's above other content */
+  width: 100%; /* Make sure it fills the width of its container */
+}
+.cart-outer{
+  padding:50px 0px;
+}
